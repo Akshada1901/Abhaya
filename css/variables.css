@@ -1,0 +1,17 @@
+/* css/variables.css — CSS custom properties + reset */
+:root {
+  --bg-deep:#0a0f1e; --bg-card:#111827; --bg-surface:#1a2235;
+  --accent-red:#ff2d55; --accent-rose:#ff6b8a; --accent-gold:#ffd60a;
+  --accent-teal:#00c9a7; --accent-blue:#3b82f6;
+  --text-primary:#f8fafc; --text-secondary:#94a3b8; --text-muted:#475569;
+  --border:rgba(255,255,255,0.06);
+  --glow-red:0 0 40px rgba(255,45,85,0.4);
+  --glow-teal:0 0 30px rgba(0,201,167,0.3);
+  --radius-lg:20px; --radius-xl:28px; --radius-full:9999px;
+  --font-main:'Outfit',sans-serif; --font-tamil:'Noto Sans Tamil',sans-serif;
+  --transition:0.3s cubic-bezier(0.34,1.56,0.64,1); --ease:0.25s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;}
+.screen::-webkit-scrollbar{display:none;}
+.screen{-ms-overflow-style:none;scrollbar-width:none;}

@@ -1,0 +1,23 @@
+/* css/settings.css — Settings screen: toggles, profile card, section rows */
+#screen-settings{background:var(--bg-deep);padding-bottom:80px;overflow-y:auto;}
+.profile-card{margin:0 24px 20px;background:var(--bg-card);border:1px solid rgba(255,45,85,0.15);border-radius:20px;padding:20px;display:flex;align-items:center;gap:16px;}
+.profile-avatar-lg{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,rgba(255,45,85,0.3),rgba(255,107,138,0.2));border:1.5px solid rgba(255,45,85,0.3);display:flex;align-items:center;justify-content:center;font-size:28px;}
+.profile-info h3{font-family:var(--font-main);font-size:16px;font-weight:700;color:var(--text-primary);}
+.profile-info p{font-family:var(--font-main);font-size:13px;color:var(--text-secondary);margin-top:3px;}
+.profile-badge{margin-left:auto;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.3);border-radius:8px;padding:6px 12px;font-family:var(--font-main);font-size:11px;font-weight:600;color:var(--accent-teal);}
+.settings-section{margin:0 24px 24px;}
+.settings-section-label{font-family:var(--font-main);font-size:11px;font-weight:600;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;padding-left:4px;}
+.setting-row{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;margin-bottom:2px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:background 0.2s;}
+.setting-row:first-of-type{border-radius:16px 16px 6px 6px;}
+.setting-row:last-of-type{border-radius:6px 6px 16px 16px;}
+.setting-row:only-child{border-radius:16px;}
+.setting-row:hover{background:rgba(255,255,255,0.03);}
+.setting-left{display:flex;align-items:center;gap:14px;}
+.setting-icon-wrap{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.setting-texts .setting-title{font-family:var(--font-main);font-size:14px;font-weight:600;color:var(--text-primary);}
+.setting-texts .setting-sub{font-family:var(--font-main);font-size:11px;color:var(--text-muted);margin-top:2px;}
+.toggle-switch{width:48px;height:28px;border-radius:99px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.08);position:relative;cursor:pointer;transition:background 0.3s;flex-shrink:0;}
+.toggle-switch.on{background:var(--accent-teal);border-color:var(--accent-teal);}
+.toggle-knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 2px 6px rgba(0,0,0,0.3);}
+.toggle-switch.on .toggle-knob{transform:translateX(20px);}
+.chevron{color:var(--text-muted);font-size:18px;}

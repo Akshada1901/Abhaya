@@ -1,0 +1,22 @@
+/* css/guardians.css — Guardians list screen */
+#screen-guardians{background:var(--bg-deep);padding-bottom:80px;overflow-y:auto;}
+.guardian-card{margin:0 24px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:18px;display:flex;align-items:center;gap:14px;transition:border-color 0.2s;}
+.guardian-card:hover{border-color:rgba(255,45,85,0.3);}
+.guardian-avatar{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.guardian-info{flex:1;}
+.guardian-name{font-family:var(--font-main);font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:3px;}
+.guardian-phone{font-family:var(--font-main);font-size:12px;color:var(--text-secondary);}
+.guardian-relation{font-family:var(--font-main);font-size:10px;font-weight:500;color:var(--accent-teal);background:rgba(0,201,167,0.1);padding:3px 10px;border-radius:99px;border:1px solid rgba(0,201,167,0.2);display:inline-block;margin-top:5px;}
+.guardian-actions{display:flex;gap:8px;}
+.guardian-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:background 0.2s,border-color 0.2s;}
+.guardian-btn:hover{background:rgba(255,45,85,0.12);border-color:rgba(255,45,85,0.3);}
+.guardian-btn.call{border-color:rgba(0,201,167,0.3);background:rgba(0,201,167,0.08);}
+.empty-state{text-align:center;padding:60px 24px;}
+.empty-icon{font-size:48px;margin-bottom:16px;opacity:0.4;}
+.empty-text{font-family:var(--font-main);font-size:14px;color:var(--text-muted);}
+.add-guardian-form{margin:0 24px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:20px;display:none;}
+.add-guardian-form.show{display:block;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-input-sm{width:100%;padding:12px 14px;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.1);border-radius:12px;color:var(--text-primary);font-family:var(--font-main);font-size:14px;outline:none;transition:border-color 0.2s;}
+.form-input-sm:focus{border-color:var(--accent-red);}
+.form-input-sm::placeholder{color:var(--text-muted);}

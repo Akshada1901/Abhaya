@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Abhaya | அபயா</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/splash.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/otp.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/map.css">
+<link rel="stylesheet" href="css/guardians.css">
+<link rel="stylesheet" href="css/settings.css">
+<link rel="stylesheet" href="css/modals.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="shell">
+<div class="device" id="app">
+  <div class="toast" id="toast"><span class="toast-icon" id="toast-icon">✅</span><span class="toast-text" id="toast-text">Action completed</span></div>
+  <div id="screen-root"></div>
+  <nav class="bottom-nav" id="bottom-nav" style="display:none;">
+    <button class="nav-item active" id="nav-home" onclick="switchTab('home')"><span class="nav-icon">🏠</span><span class="nav-label" data-en="Home" data-ta="முகப்பு">Home</span></button>
+    <button class="nav-item" id="nav-map" onclick="switchTab('map')"><span class="nav-icon">🗺️</span><span class="nav-label" data-en="Live Map" data-ta="வரைபடம்">Live Map</span></button>
+    <button class="nav-item" id="nav-guardians" onclick="switchTab('guardians')"><span class="nav-icon">👥</span><span class="nav-label" data-en="Guardians" data-ta="காவலர்கள்">Guardians</span></button>
+    <button class="nav-item" id="nav-settings" onclick="switchTab('settings')"><span class="nav-icon">⚙️</span><span class="nav-label" data-en="Settings" data-ta="அமைப்புகள்">Settings</span></button>
+  </nav>
+  <div id="sos-overlay"><span class="sos-active-icon">🚨</span><h2 class="sos-active-title">SOS ACTIVATED</h2><div class="sos-countdown" id="sos-countdown">5</div><p class="sos-active-sub">Sending alert to all guardians<br>Sharing your live location<br>Calling emergency services in <strong id="sos-count-text">5</strong> seconds</p><button class="sos-cancel-btn" onclick="cancelSOS()">Cancel SOS</button></div>
+  <div id="fake-call-overlay"><div class="call-top"><div class="call-avatar">👩‍👧</div><div class="call-name" id="fake-caller-name">Amma</div><div class="call-status">Incoming call...</div></div><div class="call-actions"><button class="call-btn decline" onclick="endFakeCall()">📵</button><button class="call-btn accept" onclick="acceptFakeCall()">📱</button></div></div>
+  <div class="overlay" id="report-modal"><div class="modal-sheet"><div class="modal-handle"></div><h3 class="modal-title">⚠️ Report Unsafe Area</h3><p class="modal-sub">Help others stay safe by reporting danger zones in Tamil Nadu.</p><textarea class="unsafe-input" rows="3" id="report-desc" placeholder="Describe the safety concern..."></textarea><select class="unsafe-input" id="report-type" style="resize:none;cursor:pointer;"><option value="">Select threat type...</option><option value="lighting">Poor Lighting</option><option value="harassment">Harassment / Eve Teasing</option><option value="isolated">Isolated Area</option><option value="suspicious">Suspicious Activity</option><option value="other">Other</option></select><button class="btn-primary" onclick="submitReport()">Submit Report</button><button class="btn-secondary" onclick="hideModal('report-modal')">Cancel</button></div></div>
+  <div class="overlay" id="codeword-modal"><div class="modal-sheet"><div class="modal-handle"></div><h3 class="modal-title">🔑 Change Codeword</h3><p class="modal-sub">Set a word or phrase that — when detected — will automatically send an SOS alert.</p><input class="form-input" id="new-codeword" placeholder="Enter new codeword..." style="padding:16px;margin-bottom:14px;letter-spacing:0;" value="Help me"><button class="btn-primary" onclick="saveCodword()">Save Codeword</button><button class="btn-secondary" onclick="hideModal('codeword-modal')">Cancel</button></div></div>
+</div>
+</div>
+<script src="js/state.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sos.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/fakecall.js"></script>
+<script src="js/guardians.js"></script>
+<script src="js/map.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

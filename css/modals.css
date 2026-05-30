@@ -1,0 +1,35 @@
+/* css/modals.css — All overlays: modals, SOS overlay, fake call, toast */
+.overlay{position:absolute;inset:0;z-index:500;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.overlay.show{opacity:1;pointer-events:all;}
+.modal-sheet{width:100%;background:var(--bg-card);border-radius:28px 28px 0 0;padding:24px 24px 40px;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);border-top:1px solid rgba(255,255,255,0.08);}
+.overlay.show .modal-sheet{transform:translateY(0);}
+.modal-handle{width:40px;height:4px;background:rgba(255,255,255,0.15);border-radius:99px;margin:0 auto 20px;}
+.modal-title{font-family:var(--font-main);font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:6px;}
+.modal-sub{font-family:var(--font-main);font-size:13px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;}
+.unsafe-input{width:100%;padding:14px 16px;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.1);border-radius:14px;color:var(--text-primary);font-family:var(--font-main);font-size:14px;outline:none;resize:none;margin-bottom:14px;}
+.unsafe-input:focus{border-color:var(--accent-red);}
+.unsafe-input::placeholder{color:var(--text-muted);}
+#sos-overlay{position:absolute;inset:0;z-index:900;background:rgba(180,0,30,0.92);backdrop-filter:blur(12px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;opacity:0;pointer-events:none;transition:opacity 0.3s;padding:40px;}
+#sos-overlay.show{opacity:1;pointer-events:all;}
+.sos-active-icon{font-size:72px;animation:sos-icon-pulse 0.8s ease infinite alternate;}
+@keyframes sos-icon-pulse{0%{transform:scale(0.95);}100%{transform:scale(1.05);}}
+.sos-active-title{font-family:var(--font-main);font-size:28px;font-weight:900;color:#fff;text-align:center;letter-spacing:1px;}
+.sos-active-sub{font-family:var(--font-main);font-size:14px;color:rgba(255,255,255,0.75);text-align:center;line-height:1.7;}
+.sos-countdown{font-family:var(--font-main);font-size:72px;font-weight:900;color:#fff;line-height:1;text-shadow:0 0 30px rgba(255,255,255,0.4);}
+.sos-cancel-btn{padding:14px 40px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:99px;color:#fff;font-family:var(--font-main);font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s;}
+.sos-cancel-btn:hover{background:rgba(255,255,255,0.2);}
+#fake-call-overlay{position:absolute;inset:0;z-index:800;background:linear-gradient(170deg,#1a3a1a,#0a1f0a);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:80px 32px 60px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+#fake-call-overlay.show{opacity:1;pointer-events:all;}
+.call-top{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.call-avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#2d5a27,#1a3a1a);border:3px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:44px;}
+.call-name{font-family:var(--font-main);font-size:28px;font-weight:700;color:#fff;}
+.call-status{font-family:var(--font-main);font-size:14px;color:rgba(255,255,255,0.6);animation:blink 1s ease infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.call-actions{display:flex;gap:40px;align-items:center;justify-content:center;}
+.call-btn{width:72px;height:72px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;}
+.call-btn.decline{background:#ff3b30;}
+.call-btn.accept{background:#34c759;}
+.toast{position:absolute;top:60px;left:16px;right:16px;z-index:1000;background:rgba(17,24,39,0.95);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;transform:translateY(-120%);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 8px 32px rgba(0,0,0,0.4);}
+.toast.show{transform:translateY(0);}
+.toast-icon{font-size:22px;flex-shrink:0;}
+.toast-text{font-family:var(--font-main);font-size:13px;color:var(--text-primary);font-weight:500;}
